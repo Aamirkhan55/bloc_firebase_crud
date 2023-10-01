@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
               }
               if(state is BlocFirebaseCrudLoaded) {
                 final users = state.users;
-                return Padding(
+                return users.isEmpty? const Center(child : Text('No Data')) :Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Column(
                     children: users.map((user) {

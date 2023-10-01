@@ -45,9 +45,9 @@ class UpdateDataEvent extends BlocFirebaseCrudEvent {
 
 // Delete Event
 class DeleteDataEvent extends BlocFirebaseCrudEvent {
-  final User user;
+  final String id;
 
-  const DeleteDataEvent(this.user);
+  const DeleteDataEvent(this.id);
   @override
-  List<Object?> get props => [user];
+  List<Object?> get props => [id];
 }

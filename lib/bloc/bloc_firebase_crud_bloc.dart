@@ -37,7 +37,7 @@ class BlocFirebaseCrudBloc
     // Load
     on<LoadDataEvent>((event, emit) {
       try {
-        emit (BlocFirebaseCrudLoaded(event.users));
+        emit(BlocFirebaseCrudLoaded(event.users));
       } catch (e) {
         emit(BlocFirebaseCrudFailure());
       }
@@ -46,9 +46,9 @@ class BlocFirebaseCrudBloc
     // Create
     on<CreateDataEvent>((event, emit) {
       try {
-       if(state is BlocFirebaseCrudLoaded) {
-        DatabaseHandler.createData(event.user);
-       } 
+        if (state is BlocFirebaseCrudLoaded) {
+          DatabaseHandler.createData(event.user);
+        }
       } catch (e) {
         emit(BlocFirebaseCrudFailure());
       }
@@ -57,7 +57,7 @@ class BlocFirebaseCrudBloc
     // Update
     on<UpdateDataEvent>((event, emit) {
       try {
-        if(state is BlocFirebaseCrudLoaded) {
+        if (state is BlocFirebaseCrudLoaded) {
           DatabaseHandler.updateData(event.user);
         }
       } catch (e) {
@@ -68,7 +68,7 @@ class BlocFirebaseCrudBloc
     // Delete
     on<DeleteDataEvent>((event, emit) {
       try {
-        if(state is BlocFirebaseCrudLoaded) {
+        if (state is BlocFirebaseCrudLoaded) {
           DatabaseHandler.deleteData(event.id);
         }
       } catch (e) {
